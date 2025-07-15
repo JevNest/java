@@ -71,7 +71,7 @@ Enter the value of N: 4
 
 4. Find factorial of a Number using recursion 
 #code
-public class FactorialRecursion {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a number: ");
@@ -85,4 +85,86 @@ public class FactorialRecursion {
         return n * factorial(n - 1);
     }
 }
-#Output
+#Output:
+Enter a number: 5
+Factorial of 5 is: 120
+
+5. Find nth Fibonacci Number using recursion 
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        System.out.println("The " + n + "th Fibonacci number is: " + fibonacci(n));
+        sc.close();
+    }
+
+    static int fibonacci(int n) {
+        if (n <= 1) return n;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+#Output:
+Enter n: 10
+The 10th Fibonacci number is: 55
+
+6. Sum of first N natural Numbers using recursion 
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println("Sum of first " + n + " natural numbers is: " + sum(n));
+        sc.close();
+    }
+
+    static int sum(int n) {
+        if (n <= 0) return 0;
+        return n + sum(n - 1);
+    }
+}
+#Output:
+Enter N: 25
+Sum of first 25 natural numbers is 325
+
+7. Find the sum of digits of a number using recursion 
+#code
+    class SumOfDigits {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter a number: ");
+            int num = sc.nextInt();
+            System.out.println("Sum of digits: " + sumOfDigits(num));
+            sc.close();
+        }
+
+        static int sumOfDigits(int n) {
+            if (n == 0) return 0;
+            return n % 10 + sumOfDigits(n / 10);
+        }
+    }
+#Output:
+Enter a number: 15
+Sum of digits: 120
+
+8.Count the Number of digits of a number 
+#code
+    public class Main {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter a number: ");
+            int num = sc.nextInt();
+            System.out.println("Number of digits: " + countDigits(num));
+            sc.close();
+        }
+
+        static int countDigits(int n) {
+            if (n == 0) return 0;
+            return 1 + countDigits(Math.abs(n / 10));
+        }
+    }
+#Output:
+Enter a number: 12
+Number of digits: 2
