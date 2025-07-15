@@ -269,3 +269,56 @@ public class Main {
 #Output:
 Array elements are: 1 2 3 4 5
 
+14.Calculate sum of squares of first N numbers using recursion
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println("Sum of squares of first " + n + " numbers is: " + sumOfSquares(n));
+        sc.close();
+    }
+
+    static int sumOfSquares(int n) {
+        if (n <= 0) return 0;
+        return n * n + sumOfSquares(n - 1);
+    }
+)
+#Output:
+Enter N: 5
+Sum of squares of first 4 numbers is 55
+
+15.Check if number is palindrome
+#code:
+public class Main {
+    static int reverseNumber(int num, int rev) {
+        if (num == 0) {
+            return rev;
+        }
+        rev = rev * 10 + num % 10;
+        return reverseNumber(num / 10, rev);
+    }
+    static boolean isPalindrome(int num) {
+        return num == reverseNumber(num, 0);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+
+        if (isPalindrome(number)) {
+            System.out.println(number + " is a palindrome.");
+        } else {
+            System.out.println(number + " is not a palindrome.");
+        }
+
+        sc.close();
+    }
+}
+#output:
+Enter a number: 12321
+12321 is a palindrome.
+Enter a number: 1359349
+1359349 is not a palindrome.
