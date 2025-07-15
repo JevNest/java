@@ -168,3 +168,104 @@ Sum of digits: 120
 #Output:
 Enter a number: 12
 Number of digits: 2
+
+9.Print Even Numbers from 2 to N 
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        printEvenNumbers(2, n);
+        sc.close();
+    }
+
+    static void printEvenNumbers(int current, int n) {
+        if (current > n) return;
+        System.out.println(current);
+        printEvenNumbers(current + 2, n);
+    }
+}
+Output:
+Enter N: 10
+2
+4
+6
+8
+10
+
+10.Print a number in reverse 
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        System.out.print("Reversed number: ");
+        printReverse(num);
+        sc.close();
+    }
+
+    static void printReverse(int n) {
+        if (n == 0) return;
+        System.out.print(n % 10);
+        printReverse(n / 10);
+    }
+}
+#output:
+Enter a number: 23456
+Reveresed number: 65432
+
+11.Calculate product of first N natural Numbers
+#code
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter N: ");
+        int n = sc.nextInt();
+        System.out.println("Product of first " + n + " natural numbers is: " + product(n));
+        sc.close();
+    }
+
+    static int product(int n) {
+        if (n == 1) return 1;
+        return n * product(n - 1);
+    }
+}
+#output:
+Enter N: 10
+Prouduct of first 10 natural numbers is 3628800
+
+12.Print sum of an array using Recursion 
+#code
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println("Sum of array elements: " + sumArray(arr, arr.length));
+    }
+
+    static int sumArray(int[] arr, int n) {
+        if (n <= 0) return 0;
+        return arr[n - 1] + sumArray(arr, n - 1);
+    }
+}
+#Output:
+Sum of array elements: 15
+
+13.Print all elements of an array using recursion
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.print("Array elements are: ");
+        printArray(arr, 0);
+    }
+
+    static void printArray(int[] arr, int index) {
+        if (index >= arr.length) return;
+        System.out.print(arr[index] + " ");
+        printArray(arr, index + 1);
+    }
+}
+#Output:
+Array elements are: 1 2 3 4 5
+
